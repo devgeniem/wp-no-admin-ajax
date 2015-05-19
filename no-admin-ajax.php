@@ -11,11 +11,11 @@ Version: 0.0.1
 class No_Admin_Ajax {
 	public function __construct() {
 		if ( ! is_admin() ) {
-			add_filter( 'admin_url', array( $this, 'redirect_ajax_url' ) );
+			add_filter( 'admin_url', array( $this, 'redirect_ajax_url' ), 11, 3 );
 		}
 	}
 
-	public function redirect_ajax_url( $url ) {
+	public function redirect_ajax_url( $url, $path, $blog_id ) {
 		if( strpos( $url, 'admin-ajax' ) ) {
 			return plugins_url( 'ajax-request.php', __FILE__ );
 		}
