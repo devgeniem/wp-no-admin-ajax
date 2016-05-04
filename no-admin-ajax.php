@@ -93,6 +93,7 @@ class No_Admin_Ajax {
 			// Run customized no-admin-ajax methods for specific ajax actions with "no-admin-ajax/before/{action}"
 			do_action( "no-admin-ajax/before/". $action );
 
+			// Same headers as WordPress normal AJAX routine sends
 			$default_headers = array(
 				"Content-Type: text/html; charset=" . get_option( "blog_charset" ),
 				"X-Robots-Tag: noindex"
@@ -101,7 +102,7 @@ class No_Admin_Ajax {
 			// Filter to customize the headers sent by ajax calls
 			$headers = apply_filters( "no-admin-ajax/headers", $default_headers );
 			 
-			// Same headers as WordPress normal AJAX routine sends
+			// Send the headers to the user
 			if ( is_array( $headers ) && count( $headers ) > 0 ) {
 				foreach ( $headers as $header ) {
 					@header( $header );
