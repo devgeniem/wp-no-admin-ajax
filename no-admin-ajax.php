@@ -38,7 +38,7 @@ class No_Admin_Ajax {
 		add_action( "init", array( $this, "rewrite" ) );
 
 		// Url keyword to use for the ajax calls. Is modifiable with filter "no-admin-ajax/keyword"
-		$default_keyword = "ajax";
+		$default_keyword = "no-admin-ajax";
 
 		$this->keyword = apply_filters( "no-admin-ajax/keyword", $default_keyword );
 	}
