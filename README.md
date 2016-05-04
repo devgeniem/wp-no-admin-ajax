@@ -17,8 +17,9 @@ $ composer require devgeniem/wp-no-admin-ajax
 
 ## Hooks & Filters
 You can customize the url by using filter `no-admin-ajax/keyword`.
-```
+```php
 <?php
+
 // This changes /no-admin-ajax/ -> /ajax/
 add_filter( 'no-admin-ajax/keyword', 'my_custom_no_admin_ajax_url' );
 function my_custom_no_admin_ajax_url( $ajax_url ) {
@@ -27,8 +28,9 @@ function my_custom_no_admin_ajax_url( $ajax_url ) {
 ```
 
 You can run commands before ajax calls by using `no-admin-ajax/before` or `no-admin-ajax/before/{action}`
-```
+```php
 <?php
+// Writes log entries after hearthbeat action for debugging
 do_action( 'no-admin-ajax/before/heartbeat' , 'my_custom_no_admin_ajax_debug' );
 function my_custom_no_admin_ajax_debug() {
     error_log( 'DEBUG | heartbeat action was run by: '.$_SERVER[“REMOTE_ADDR”] );
