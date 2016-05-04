@@ -64,8 +64,6 @@ class No_Admin_Ajax {
 
 		$rule = apply_filters( "no-admin-ajax/rule", $default_rule );
 
-		error_log("Rule: $rule");
-
 		add_rewrite_rule(
 			$rule,
 			"index.php?no-admin-ajax=true",
