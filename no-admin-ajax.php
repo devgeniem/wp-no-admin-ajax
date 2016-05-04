@@ -1,10 +1,12 @@
 <?php
 /*
 Plugin Name: No-Admin-Ajax
-Plugin URI: http://www.geniem.com
+Plugin URI: https://github.com/devgeniem/wp-no-admin-ajax
 Description: A plugin that lightens the WP AJAX routine and directs the requests to front-end rather than admin back-end.
 Author: Miika Arponen / Geniem Oy
 Author URI: http://www.geniem.com
+License: MIT
+License URI: https://github.com/devgeniem/wp-no-admin-ajax/blob/master/LICENSE
 Version: 1.0.0
 */
 
@@ -101,17 +103,17 @@ class No_Admin_Ajax {
 
 			// Filter to customize the headers sent by ajax calls
 			$headers = apply_filters( "no-admin-ajax/headers", $default_headers );
-			 
+
 			// Send the headers to the user
 			if ( is_array( $headers ) && count( $headers ) > 0 ) {
 				foreach ( $headers as $header ) {
 					@header( $header );
 				}
 			}
-			
+
 			send_nosniff_header();
 			nocache_headers();
-			 
+
 			// Run the actions
 			if(is_user_logged_in()) {
 			    do_action( "wp_ajax_" . $action );

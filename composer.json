@@ -9,5 +9,9 @@
       "email": "miika.arponen@geniem.com",
       "homepage" : "https://github.com/Nomafin"
     }
-  ]
+  ],
+  "require": {
+    "php": ">=5.5",
+    "composer/installers": "v1.0.12"
+  }
 }
