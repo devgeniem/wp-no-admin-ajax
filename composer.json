@@ -1,0 +1,13 @@
+{
+  "name": "devgeniem/wp-no-admin-ajax",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "A WordPress plugin that lightens the WP AJAX routine and directs the requests to front-end rather than admin back-end.",
+  "authors": [
+    {
+      "name": "Miika Arponen",
+      "email": "miika.arponen@geniem.com",
+      "homepage" : "https://github.com/Nomafin"
+    }
+  ]
+}
