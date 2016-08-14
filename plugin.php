@@ -41,7 +41,13 @@ class No_Admin_Ajax {
     add_action( "init", array( $this, "rewrite" ) );
 
     // Url keyword to use for the ajax calls. Is modifiable with filter "no-admin-ajax/keyword"
-    $default_keyword = "no-admin-ajax";
+    if ( defined('WP_NO_ADMIN_AJAX_URL') ) {
+        // keyword doesn't need to contain slashes because they are set in redirect_ajax_url()
+        // trim slashes to avoid confusion
+        $default_keyword = trim(WP_NO_ADMIN_AJAX_URL,'/');
+    } else {
+        $default_keyword = "no-admin-ajax";
+    }
 
     $this->keyword = apply_filters( "no-admin-ajax/keyword", $default_keyword );
   }
