@@ -15,7 +15,18 @@ $ composer require devgeniem/wp-no-admin-ajax
 - Rewrite all admin-ajax.php queries into custom url so you can allow `/wp-admin/` to only certain IP-addresses.
 - You can use this to confuse bots which might try to use vulnerabilities in admin-ajax.php.
 
-## Hooks & Filters
+## Configuration
+### Variables
+This plugin url is by default `/no-admin-ajax/`. You can use filters to change it or you can set the default value by yourself by using:
+
+```php
+// This turns the no admin ajax url to -> /ajax/
+define('WP_NO_ADMIN_AJAX_URL','ajax');
+```
+
+**Notice:** Value set here can be filtered too, this just sets the starting point for the custom url.
+
+### Hooks & Filters
 You can customize the url by using filter `no-admin-ajax/keyword`.
 ```php
 <?php
