@@ -18,11 +18,11 @@ class No_Admin_Ajax {
 
   public function __construct() {
     // This class should be run only once
-    if ( $this->already_run === true ) {
+    if ( self::$already_run === true ) {
       return false;
     }
     else {
-      $this->already_run = true;
+      self::$already_run = true;
     }
 
     add_action( "after_setup_theme", array( $this, "init" ) );
