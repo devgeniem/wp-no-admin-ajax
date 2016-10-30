@@ -7,7 +7,7 @@
  * Author URI: http://www.geniem.com
  * License: MIT
  * License URI: https://github.com/devgeniem/wp-no-admin-ajax/blob/master/LICENSE
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 namespace Geniem\Helper;
 
