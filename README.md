@@ -26,6 +26,8 @@ define('WP_NO_ADMIN_AJAX_URL','ajax');
 
 **Notice:** Value set here can be filtered too, this just sets the starting point for the custom url.
 
+**Notice 2:** After plugin installation and other changes be sure to refresh your permalinks by just going to Settings > Permalinks > and saving it without any modification.
+
 ### Hooks & Filters
 You can customize the url by using filter `no-admin-ajax/keyword`.
 ```php
